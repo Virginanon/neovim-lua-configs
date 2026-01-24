@@ -58,4 +58,12 @@ return {
             inc_rename = false,      -- 如果你用了 inc-rename.nvim 就设为 true
         },
     },
+    config = function (_, opts)
+        local noice = require("noice")
+        noice.setup(opts)
+
+        vim.keymap.set("n", "<leader>nl", function ()
+            noice.cmd("last")
+        end)
+    end
 }
