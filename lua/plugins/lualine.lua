@@ -27,7 +27,14 @@ return {
         lualine_c = { 'diff', 'diagnostics' },
         lualine_x = { 'encoding', 'fileformat', 'filetype' },
         lualine_y = { 'progress' },
-        lualine_z = { { 'location', separator = { right = ' ' }, left_padding = 2 } },
+        lualine_z = {
+            { 'location', separator = { right = ' ' }, left_padding = 2 },
+            --{
+            --  require("noice").api.status.command.get,
+            --  cond = require("noice").api.status.command.has,
+            --  color = { fg = "#ff9e64" },
+            --},
+        },
       },
     })
   end,
