@@ -28,6 +28,17 @@ return {
 
                 -- 这里可以配置 UI 风格、搜索过滤等
                 path_display = { "smart" },
+                file_ignore_patterns = {
+                    "node_modules",
+                    "%.git/",
+                    "target/",
+                    "vendor/",
+                    "%.exe",
+                    "%.lock",
+                    "__pycache__/*",
+                    "dist/",
+                },
+
                 mappings = {
                     i = {
                         -- 在插入模式下，用 <C-j>/<C-k> 上下移动选中项
