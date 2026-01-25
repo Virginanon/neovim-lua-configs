@@ -11,8 +11,6 @@ keymaps("n", "<C-k>", "9k", keymap_settings)
 keymaps("v", "<C-j>", "9j", keymap_settings)
 keymaps("v", "<C-k>", "9k", keymap_settings)
 
--- window 相关 mappings
-
 keymaps("n", "<leader>wl", "<C-w>l", keymap_settings)
 keymaps("n", "<leader>wh", "<C-w>h", keymap_settings)
 keymaps("n", "<leader>wj", "<C-w>j", keymap_settings)
