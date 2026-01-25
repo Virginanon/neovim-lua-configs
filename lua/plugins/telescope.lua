@@ -41,9 +41,15 @@ return {
 
                 mappings = {
                     i = {
-                        -- 在插入模式下，用 <C-j>/<C-k> 上下移动选中项
+                        -- 在插入模式下，用 <C-p>/<C-n> 上下移动选中项
                         ["<C-p>"] = actions.move_selection_previous,
                         ["<C-n>"] = actions.move_selection_next,
+                        -- 在插入模式下，用 <C-j>/<C-k> 上下滚动预览
+                        ["<C-j>"] = actions.preview_scrolling_down,
+                        ["<C-k>"] = actions.preview_scrolling_up,
+                        ["<C-h>"] = actions.preview_scrolling_left,
+                        ["<C-l>"] = actions.preview_scrolling_right,
+
                         ["<C-d>"] = actions.delete_buffer,
                         ["<C-f>"] = action_layout.toggle_preview,
                     },
