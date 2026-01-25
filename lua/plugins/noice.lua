@@ -17,6 +17,9 @@ return {
                 enabled = true,
                 silent = false, -- 如果设为 true，则在没有内容时不显示空框
             },
+            signature = {
+                enabled = false,
+            },
         },
         progress = { enabled = true },
 

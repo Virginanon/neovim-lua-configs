@@ -3,7 +3,7 @@ return {
     event = "VeryLazy",
     opts = {
         -- 重点：将延迟设短，这样你一按下按键它就跳出来
-        delay = 200,
+        delay = 500,
         icons = {
             breadcrumb = "»",
             separator = "➜",
