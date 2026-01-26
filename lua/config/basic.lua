@@ -15,7 +15,7 @@ if vim.g.neovide then
     vim.g.neovide_padding_right = 0
 
     -- 透明度：0.0 到 1.0 之间
-    vim.g.neovide_opacity = 0.6
+    vim.g.neovide_opacity = 0.85
     -- 模糊程度：数值越大越模糊
     vim.g.neovide_window_blurred = true
     vim.g.neovide_blur_amount_x = 12.0
