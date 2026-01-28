@@ -10,7 +10,7 @@ return {
         scope = {
             enabled = true,                      -- 开启当前作用域（括号范围）高亮
             show_start = true,                   -- 是否显示括号起始行的辅助线
-            show_end = false,
+            show_end = true,
             highlight = { "Function", "Label" }, -- 高亮颜色参考
         },
         exclude = {
