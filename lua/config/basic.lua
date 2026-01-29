@@ -7,7 +7,7 @@ opts.relativenumber = true
 opts.wrap = false
 
 if vim.g.neovide then
-    opts.guifont = "Maple_Mono_NF_CN:Regular:h14"
+    opts.guifont = "Maple_Mono_NL_NF_CN:Regular:h12"
 
     vim.g.neovide_padding_top = 0
     vim.g.neovide_padding_bottom = 0
@@ -15,14 +15,14 @@ if vim.g.neovide then
     vim.g.neovide_padding_right = 0
 
     -- 透明度：0.0 到 1.0 之间
-    vim.g.neovide_opacity = 0.85
+    vim.g.neovide_opacity = 1
     -- 模糊程度：数值越大越模糊
     vim.g.neovide_window_blurred = true
     vim.g.neovide_blur_amount_x = 12.0
     vim.g.neovide_blur_amount_y = 12.0
 
     -- 配合 Catppuccin 的高级感：隐藏不必要的窗口装饰
-    vim.g.neovide_window_floating_opacity = 0.9
+    vim.g.neovide_window_floating_opacity = 1
     vim.g.neovide_floating_blur_amount_x = 5.0
     vim.g.neovide_floating_blur_amount_y = 5.0
     vim.g.neovide_floating_shadow = true
@@ -38,8 +38,8 @@ opts.cursorline = true
 vim.cmd("filetype plugin indent on")
 
 vim.diagnostic.config({
-    signs = true,        -- 在侧边栏显示图标
-    underline = true,    -- 给错误代码加下划线
+    signs = true,     -- 在侧边栏显示图标
+    underline = true, -- 给错误代码加下划线
 })
 
 vim.g.loaded_netrw = 1

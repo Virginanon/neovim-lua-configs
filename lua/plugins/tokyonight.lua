@@ -15,6 +15,12 @@ return {
             sidebars = "dark",
             floats = "dark",
         },
+        on_highlights = function(hl, c)
+            hl.Comment = {
+                fg = "#7caea3",
+                italic = true,
+            }
+        end,
     },
     config = function(_, opts)
         require("tokyonight").setup(opts)
