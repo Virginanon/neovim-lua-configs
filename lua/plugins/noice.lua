@@ -3,7 +3,26 @@ return {
     event = "VeryLazy",
     dependencies = {
         "MunifTanjim/nui.nvim",
-        "rcarriga/nvim-notify", -- 可选，用于漂亮的通知弹窗
+        {
+            "rcarriga/nvim-notify", -- 可选，用于漂亮的通知弹窗,
+            opts = {
+                max_width = 50,
+                render = "wrapped-compact",
+            },
+        },
+        {
+            "j-hui/fidget.nvim",
+            opts = {
+                notification = {
+                    poll_rate = 10,
+                    window = {
+                        normal_hl = "Comment",
+                        winblend = 5,
+                        border = "rounded",
+                    },
+                },
+            },
+        },
     },
     opts = {
         lsp = {
@@ -20,13 +39,13 @@ return {
             signature = {
                 enabled = false,
             },
+            progress = { enabled = false },
         },
-        progress = { enabled = true },
 
         views = {
             cmdline_popup = {
                 position = {
-                    row = "30%", -- 距离顶部 40%，接近中心
+                    row = "30%", -- 距离顶部 30%
                     col = "50%", -- 水平正中心
                 },
                 size = {
@@ -34,19 +53,32 @@ return {
                     height = "auto",
                 },
             },
+            --notify = {
+            --    replace = true,
+            --    merge = true,
+            --    backend = "popup",
+            --    win_options = {
+            --        wrap = true,
+            --        linebreak = true,
+            --    },
+            --    size = {
+            --        width = 50,
+            --        height = "auto",
+            --    },
+            --},
         },
         presets = {
-            lsp_doc_border = true,   -- 给 LSP 文档添加边框！
-            bottom_search = true,    -- 底部搜索栏
-            command_palette = true,  -- 命令面板
+            lsp_doc_border = true,  -- 给 LSP 文档添加边框！
+            bottom_search = true,   -- 底部搜索栏
+            command_palette = true, -- 命令面板
             long_message_to_split = true,
-            inc_rename = false,      -- 如果你用了 inc-rename.nvim 就设为 true
+            inc_rename = false,     -- 如果你用了 inc-rename.nvim 就设为 true
         },
     },
-    config = function (_, opts)
+    config = function(_, opts)
         local noice = require("noice")
         noice.setup(opts)
-        vim.keymap.set("n", "<leader>nl", function ()
+        vim.keymap.set("n", "<leader>nl", function()
             noice.cmd("last")
         end)
     end
