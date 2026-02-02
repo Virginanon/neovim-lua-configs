@@ -12,6 +12,7 @@ return {
                 hsl_fn = true,       -- CSS hsl() and hsla() functions
                 css = true,          -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
                 mode = "background", -- 高亮模式: 'background', 'foreground', 'virtualtext'
+                tailwind = true,
             },
         })
     end,

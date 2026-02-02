@@ -29,8 +29,9 @@ return {
         require("mason").setup()
         local mason_lspconfig = require("mason-lspconfig")
         mason_lspconfig.setup({
-            ensure_installed = { "lua_ls", "ts_ls", "html", "cssls" },
+            ensure_installed = { "lua_ls", "ts_ls", "vue_ls", "html", "emmet_ls", "cssls", "tailwindcss" },
         })
+
         vim.lsp.config("lua_ls", {
             settings = {
                 Lua = {
@@ -49,7 +50,38 @@ return {
         })
         vim.lsp.enable("lua_ls")
 
+        vim.lsp.config("html", {
+            on_attach = function(client, _)
+                -- 禁掉 html lsp 丑陋的格式化能力
+                client.server_capabilities.documentFormattingProvider = false
+                client.server_capabilities.documentRangeFormattingProvider = false
+            end,
+        })
+        -- emmet_ls 提供输入标签名自动补全的能力
+        vim.lsp.config("emmet_ls", {
+            filetypes = { "html", "typescriptreact", "javascriptreact", "css", "scss", "sass", "less", "vue" },
+        })
+        vim.lsp.enable("html")
+        vim.lsp.enable("emmet_ls")
+
+        vim.lsp.config("tailwindcss", {
+            filetypes = { "html", "typescriptreact", "javascriptreact", "css", "scss", "sass", "less", "vue" },
+        })
+        vim.lsp.enable("tailwindcss")
+
+        local mason_path = vim.fn.stdpath("data") .. "/mason/packages"
+        local vue_plugin_path = mason_path .. "/vue-language-server/node_modules/@vue/language-server"
         vim.lsp.config("ts_ls", {
+            filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact", "vue" },
+            init_options = {
+                plugins = {
+                    {
+                        name = "@vue/typescript-plugin",
+                        location = vue_plugin_path,
+                        languages = { "javascript", "typescript", "javascriptreact", "typescriptreact", "vue" },
+                    },
+                },
+            },
             settings = {
                 javascript = {
                     suggest = { completeFunctionCalls = true },
@@ -60,6 +92,14 @@ return {
                 },
             },
         })
+        vim.lsp.config("vue_ls", {
+            init_options = {
+                vue = {
+                    hybridMode = true,
+                },
+            },
+        })
         vim.lsp.enable("ts_ls")
+        vim.lsp.enable("vue_ls")
     end,
 }

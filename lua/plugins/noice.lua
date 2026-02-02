@@ -53,19 +53,6 @@ return {
                     height = "auto",
                 },
             },
-            --notify = {
-            --    replace = true,
-            --    merge = true,
-            --    backend = "popup",
-            --    win_options = {
-            --        wrap = true,
-            --        linebreak = true,
-            --    },
-            --    size = {
-            --        width = 50,
-            --        height = "auto",
-            --    },
-            --},
         },
         presets = {
             lsp_doc_border = true,  -- 给 LSP 文档添加边框！
@@ -78,7 +65,7 @@ return {
     config = function(_, opts)
         local noice = require("noice")
         noice.setup(opts)
-        vim.keymap.set("n", "<leader>nl", function()
+        vim.keymap.set("n", "<leader>ml", function()
             noice.cmd("last")
         end)
     end
