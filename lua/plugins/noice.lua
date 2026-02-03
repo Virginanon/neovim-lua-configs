@@ -11,6 +11,7 @@ return {
             },
         },
         {
+            -- 右下角浮窗
             "j-hui/fidget.nvim",
             opts = {
                 notification = {
@@ -25,6 +26,18 @@ return {
         },
     },
     opts = {
+        routes = {
+            {
+                filter = {
+                    event = "msg_show",
+                    any = {
+                        { find = "written" },
+                    },
+                },
+                opts = { skip = false },
+                view = "notify",
+            },
+        },
         lsp = {
             -- 覆盖 lsp 的 hover 和 signature 帮助
             override = {
@@ -41,7 +54,6 @@ return {
             },
             progress = { enabled = false },
         },
-
         views = {
             cmdline_popup = {
                 position = {

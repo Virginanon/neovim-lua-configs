@@ -15,14 +15,14 @@ if vim.g.neovide then
     vim.g.neovide_padding_right = 0
 
     -- 透明度：0.0 到 1.0 之间
-    vim.g.neovide_opacity = 0.9
+    vim.g.neovide_opacity = 1
     -- 模糊程度：数值越大越模糊
     vim.g.neovide_window_blurred = true
     vim.g.neovide_blur_amount_x = 12.0
     vim.g.neovide_blur_amount_y = 12.0
 
     -- 配合 Catppuccin 的高级感：隐藏不必要的窗口装饰
-    vim.g.neovide_window_floating_opacity = 0.9
+    vim.g.neovide_window_floating_opacity = 1
     vim.g.neovide_floating_blur_amount_x = 5.0
     vim.g.neovide_floating_blur_amount_y = 5.0
     vim.g.neovide_floating_shadow = true
@@ -50,3 +50,6 @@ vim.opt.termguicolors = true
 -- 窗口标题
 vim.opt.title = true
 vim.opt.titlestring = "%{fnamemodify(getcwd(), ':t')} - Neovide"
+
+vim.opt.cmdheight = 1
+vim.opt.showmode = false
