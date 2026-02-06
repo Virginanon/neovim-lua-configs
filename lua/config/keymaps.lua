@@ -16,7 +16,7 @@ keymaps("n", ")", "^", keymap_settings)
 keymaps("n", "S", "i<CR><ESC>", keymap_settings)
 
 -- adjust window size
-keymaps("n", "<C-S-l>", "5<C-w>>", keymap_settings)
+keymaps("n", "<C-S-b>", "5<C-w>>", keymap_settings)
 keymaps("n", "<C-S-s>", "5<C-w><", keymap_settings)
 
 -- move cursor to window
