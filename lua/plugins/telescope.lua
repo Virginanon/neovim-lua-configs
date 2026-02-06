@@ -11,22 +11,28 @@ return {
 
         telescope.setup({
             defaults = {
-                layout_strategy = 'flex',
+                sorting_strategy = "ascending", -- 结果从上往下排
+                layout_strategy = "horizontal", -- 横向布局
+                borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
                 layout_config = {
-                    flex = {
-                        flip_columns = 100,
-                    },
                     horizontal = {
-                        preview_width = 0.6,
-                        preview_cutoff = 0,
+                        prompt_position = "top", -- 输入框在上方
+                        preview_width = 0.55,
+                        results_width = 0.8,
                     },
                     vertical = {
-                        preview_height = 0.5,
-                        preview_cutoff = 0,
+                        mirror = false,
                     },
+                    width = 0.87,
+                    height = 0.80,
+                    preview_cutoff = 120,
                 },
+                -- UI 装饰
+                prompt_prefix = " 🔍 ", -- 搜索符号
+                selection_caret = "  ", -- 选中项的前缀
+                entry_prefix = "  ",
 
-                -- 这里可以配置 UI 风格、搜索过滤等
+                -- 搜索过滤
                 path_display = { "smart" },
                 file_ignore_patterns = {
                     "node_modules",

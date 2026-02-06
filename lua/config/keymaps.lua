@@ -11,6 +11,10 @@ keymaps("n", "<C-k>", "9k", keymap_settings)
 keymaps("v", "<C-j>", "9j", keymap_settings)
 keymaps("v", "<C-k>", "9k", keymap_settings)
 
+keymaps("n", ")", "^", keymap_settings)
+
+keymaps("n", "S", "i<CR><ESC>", keymap_settings)
+
 -- adjust window size
 keymaps("n", "<C-S-l>", "5<C-w>>", keymap_settings)
 keymaps("n", "<C-S-s>", "5<C-w><", keymap_settings)

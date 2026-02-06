@@ -6,8 +6,10 @@ opts.number = true
 opts.relativenumber = true
 opts.wrap = false
 
+vim.opt.clipboard = "unnamedplus"
+
 if vim.g.neovide then
-    opts.guifont = "Maple_Mono_NL_NF_CN:Regular:h12"
+    opts.guifont = "Maple_Mono_NF_CN:Regular:h12"
 
     vim.g.neovide_padding_top = 0
     vim.g.neovide_padding_bottom = 0
@@ -52,4 +54,4 @@ vim.opt.title = true
 vim.opt.titlestring = "%{fnamemodify(getcwd(), ':t')} - Neovide"
 
 vim.opt.cmdheight = 1
-vim.opt.showmode = false
+vim.opt.showmode = true
