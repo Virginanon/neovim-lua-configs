@@ -6,8 +6,14 @@ return {
             direction = 'float',
             -- 浮动窗口样式
             float_opts = {
-                border = 'curved', -- 边框样式：'single' | 'double' | 'shadow' | 'curved'
+                border = 'single', -- 边框样式：'single' | 'double' | 'shadow' | 'curved'
                 winblend = 3,      -- 窗口透明度
+                width = function()
+                    return math.ceil(vim.o.columns * 0.7)
+                end,
+                height = function()
+                    return math.ceil(vim.o.lines * 0.8)
+                end,
             },
             shell = "pwsh",
             -- 打开终端的快捷键
