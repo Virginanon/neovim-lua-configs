@@ -14,4 +14,4 @@ vim.keymap.set({ "n", "v" }, "<leader>wh", "<C-w>h", opts)
 vim.keymap.set({ "n", "v" }, "<leader>wl", "<C-w>l", opts)
 
 -- terminal
-vim.keymap.set("t", "<C-`>", [[<C-\><C-n>]], opts)
+vim.keymap.set("t", "<C-[>", [[<C-\><C-n>]], opts)
